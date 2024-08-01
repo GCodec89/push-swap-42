@@ -5,34 +5,40 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/08/01 17:29:40 by gonolive          #+#    #+#              #
-#    Updated: 2024/08/01 18:15:08 by gonolive         ###   ########.fr        #
+#    Created: 2024/08/01 18:05:28 by gonolive          #+#    #+#              #
+#    Updated: 2024/08/01 21:52:20 by gonolive         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-LIBFT_SRCS	= printf/ft_printf.c printf/ft_printnbr.c printf/ft_printptr.c \
-				printf/ft_printstr.c printf/ft_putchar.c printf/ft_putptrhex.c \
-				ft_atol.c ft_isdigit.c ft_split.c
+NAME 			= push_swap
 
-LIBFT_OBJS	= $(LIBFT_SRCS:.c=.o)
+CC				= gcc
+RM				= rm -rf
+CFLAGS			= -Wall -Wextra -Werror -g -Iheaders/
 
-CC			= cc
-RM			= rm -rf
-CFLAGS		= -Wall -Wextra -Werror -fPIC
+LIBFT 			= libft/libft.a
 
-NAME 		= libft.a
+SRCS 			= main.c \
+						utils/erros.c utils/exit.c utils/freeza.c utils/stacks.c \
 
-all:		$(NAME)
+OBJS 			= $(SRCS:%.c=%.o)
 
-$(NAME)		$(LIBFT_OBJS)
-			ar rcs $(NAME) $(LIBFT_OBJS)
+all:			$(NAME)
 
-clean:		
-			$(RM) $(LIBFT_OBJS)
+$(LIBFT):
+				@$(MAKE) -C ./libft
 
-fclean:		clean
-			$(RM) $(NAME)
+$(NAME):		$(OBJS) $(LIBFT)
+				@$(CC) $(OBJS) $(CFLAGS) $(LIBFT) -o $(NAME)
 
-re:			fclean $(NAME)
+clean:
+				@$(MAKE) clean -C ./libft
+				@$(RM) $(OBJS)
 
-.PHONY: 	all clean fclean re
+fclean:         clean
+				@$(MAKE) fclean -C ./libft
+				@$(RM) $(NAME)
+
+re:             fclean all
+
+.PHONY:         all clean fclean re

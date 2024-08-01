@@ -1,24 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   freeza.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/01 17:44:11 by gonolive          #+#    #+#             */
-/*   Updated: 2024/08/01 18:55:55 by gonolive         ###   ########.fr       */
+/*   Created: 2024/07/30 09:04:51 by gonolive          #+#    #+#             */
+/*   Updated: 2024/07/30 09:10:05 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "../push_swap.h"
 
-#include <stdlib.h>
-#include "printf/ft_printf.h"
+void	free_stack(t_stack **stack)
+{
+	t_stack	*tmp;
+	t_stack	*current;
 
-long	ft_atol(const char *str);
-int		ft_isdigit(int n);
-char	**ft_split(char const *str, char c);
+	if (!stack || !*stack)
+	{
+		return ;
+	}
+	current = *stack;
+	while (current)
+	{
+		tmp = current->next;
+		free(current);
+		current = tmp;
+	}
+	*stack = NULL;
+}
 
+void	free_argv(char *argv[])
+{
+	int	i;
 
-#endif
+	i = -1;
+	if (!argv)
+	{
+		return ;
+	}
+	while (argv[++i])
+	{
+		free(argv[i]);
+	}
+	free(argv);
+}
