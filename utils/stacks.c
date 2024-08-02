@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 21:52:31 by gonolive          #+#    #+#             */
-/*   Updated: 2024/08/01 21:54:56 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/08/02 09:11:58 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,19 @@ t_stack	*ft_new_node(int n)
 	stack->next = NULL;
 	stack->prev = NULL;
 	return (stack);
+}
+
+int	ft_stack_size(t_stack *stack)
+{
+	t_stack	*node;
+	int		i;
+
+	i = 0;
+	node = stack;
+	while (node)
+	{
+		node = node->next;
+		i++;
+	}
+	return (i);
 }

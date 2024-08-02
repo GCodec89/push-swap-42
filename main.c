@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 18:09:10 by gonolive          #+#    #+#             */
-/*   Updated: 2024/08/02 08:25:15 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/08/02 08:33:52 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,6 @@ int	main(int argc, char *argv[])
 		args = argv + 1;
 	}
 	init_stack_a(args, &a, argc);
+	push_swap(&a, &b);
+	ft_exit(&a, argc, args, 0);
 }

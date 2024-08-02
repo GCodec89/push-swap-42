@@ -6,40 +6,41 @@
 #    By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 18:05:28 by gonolive          #+#    #+#              #
-#    Updated: 2024/08/02 08:29:27 by gonolive         ###   ########.fr        #
+#    Updated: 2024/08/02 09:24:01 by gonolive         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 			= push_swap
+NAME 		= push_swap
 
-CC				= gcc
-RM				= rm -rf
-CFLAGS			= -Wall -Wextra -Werror -g -Iheaders/
+CC			= gcc
+RM			= rm -rf
+CFLAGS		= -Wall -Wextra -Werror -g -Iheaders/
 
-LIBFT 			= libft/libft.a
+LIBFT 		= libft/libft.a
 
-SRCS 			= main.c \
-						coms/push.c coms/rev_rotate.c coms/rotate.c coms/swap.c \
-						utils/erros.c utils/exit.c utils/freeza.c utils/stacks.c \
+SRCS 		= main.c \
+					algorithm/push_swap.c
+					coms/push.c coms/rev_rotate.c coms/rotate.c coms/swap.c \
+					utils/erros.c utils/exit.c utils/find.c utils/freeza.c utils/stacks.c \
 
-OBJS 			= $(SRCS:%.c=%.o)
+OBJS 		= $(SRCS:%.c=%.o)
 
-all:			$(NAME)
+all:		$(NAME)
 
 $(LIBFT):
-				@$(MAKE) -C ./libft
+			@$(MAKE) -C ./libft
 
-$(NAME):		$(OBJS) $(LIBFT)
-				@$(CC) $(OBJS) $(CFLAGS) $(LIBFT) -o $(NAME)
+$(NAME):	$(OBJS) $(LIBFT)
+			@$(CC) $(OBJS) $(CFLAGS) $(LIBFT) -o $(NAME)
 
 clean:
-				@$(MAKE) clean -C ./libft
-				@$(RM) $(OBJS)
+			@$(MAKE) clean -C ./libft
+			@$(RM) $(OBJS)
 
-fclean:         clean
-				@$(MAKE) fclean -C ./libft
-				@$(RM) $(NAME)
+fclean:		clean
+			@$(MAKE) fclean -C ./libft
+			@$(RM) $(NAME)
 
-re:             fclean all
+re:			fclean all
 
-.PHONY:         all clean fclean re
+.PHONY:		all clean fclean re

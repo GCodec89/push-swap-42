@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 18:22:22 by gonolive          #+#    #+#             */
-/*   Updated: 2024/08/02 08:32:15 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/08/02 09:24:49 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ typedef struct s_stack
 	struct s_stack	*target;
 }	t_stack;
 
+void	push_swap(t_stack **a, t_stack **b);
+
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);
 void	rra(t_stack **a);
@@ -45,10 +47,12 @@ void	ss(t_stack **a, t_stack **b);
 int		check_error(char *argv, long n, t_stack **a);
 int		check_repeat(t_stack *a, int n);
 int		ft_exit(t_stack **a, int argc, char *argv[], int error);
+t_stack	*find_maxim(t_stack *stack);
 void	free_stack(t_stack **stack);
 void	free_argv(char *argv[]);
 void	*ft_stack_last(t_stack *stack);
 void	ft_stack_add_back(t_stack **stack, t_stack *new);
 t_stack	*ft_new_node(int n);
+int		ft_stack_size(t_stack *stack);
 
 #endif
