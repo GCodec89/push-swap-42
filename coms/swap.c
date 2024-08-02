@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 17:50:50 by gonolive          #+#    #+#             */
-/*   Updated: 2024/07/30 18:28:30 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/08/02 12:02:53 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	swap(t_stack **stack)
 {
-	if (*stack == NULL || ft_stacksize(*stack) == 1)
+	if (*stack == NULL || ft_stack_size(*stack) == 1)
 	{
 		return ;
 	}

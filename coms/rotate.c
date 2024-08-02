@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 19:48:28 by gonolive          #+#    #+#             */
-/*   Updated: 2024/07/31 22:44:51 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/08/02 12:04:38 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ static void	rotate(t_stack **stack)
 {
 	t_stack	*last_node;
 
-	if (!*stack || ft_stacksize(*stack) == 1)
+	if (!*stack || ft_stack_size(*stack) == 1)
 	{
 		return ;
 	}
-	last_node = ft_stacklast(*stack);
+	last_node = ft_stack_last(*stack);
 	last_node->next = *stack;
 	*stack = (*stack)->next;
 	(*stack)->prev = NULL;

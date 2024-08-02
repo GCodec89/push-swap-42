@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/01 17:45:50 by gonolive          #+#    #+#             */
-/*   Updated: 2024/08/01 17:56:59 by gonolive         ###   ########.fr       */
+/*   Created: 2024/07/30 08:50:55 by gonolive          #+#    #+#             */
+/*   Updated: 2024/07/30 08:52:14 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int n)
+int	ft_isdigit(int c)
 {
-	return (n >= '0' && n <= '9');
+	return (c >= '0' && c <= '9');
 }

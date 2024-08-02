@@ -6,16 +6,14 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 11:31:12 by gonolive          #+#    #+#             */
-/*   Updated: 2024/08/01 17:27:03 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/08/02 11:57:05 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <unistd.h>
-# include <stdarg.h>
-# include <stdlib.h>
+# include "../libft.h"
 
 int				ft_printf(const char *format, ...);
 int				ft_putchar(char c);

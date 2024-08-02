@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/01 19:01:26 by gonolive          #+#    #+#             */
-/*   Updated: 2024/08/01 21:30:49 by gonolive         ###   ########.fr       */
+/*   Created: 2024/07/29 18:59:44 by gonolive          #+#    #+#             */
+/*   Updated: 2024/08/02 12:01:01 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	check_error(char *argv, long n, t_stack **a)
 {
@@ -21,7 +21,7 @@ int	check_error(char *argv, long n, t_stack **a)
 	i = 0;
 	if (n > INT_MAX || n < INT_MIN)
 		return (FALSE);
-	if ((check_repeat(*a, n)) == TRUE)
+	if (check_repeat(*a, n) == 0)
 		return (FALSE);
 	if ((argv[0] == '+' || argv[0] == '-') && argv[1] >= '0' && argv[1] <= '9')
 	{
@@ -45,8 +45,9 @@ int	check_repeat(t_stack *a, int n)
 	{
 		if (a->number == n)
 		{
-			return (TRUE);
+			return (0);
 		}
+		a = a->next;
 	}
-	return (FALSE);
+	return (1);
 }

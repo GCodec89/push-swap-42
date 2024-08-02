@@ -5,34 +5,35 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/08/01 17:29:40 by gonolive          #+#    #+#              #
-#    Updated: 2024/08/01 18:15:08 by gonolive         ###   ########.fr        #
+#    Created: 2024/07/29 11:59:42 by gonolive          #+#    #+#              #
+#    Updated: 2024/07/30 09:16:14 by gonolive         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-LIBFT_SRCS	= printf/ft_printf.c printf/ft_printnbr.c printf/ft_printptr.c \
+LIB_SRCS		= ft_split.c ft_atol.c ft_isdigit.c \
+				printf/ft_printf.c printf/ft_printnbr.c printf/ft_printptr.c \
 				printf/ft_printstr.c printf/ft_putchar.c printf/ft_putptrhex.c \
-				ft_atol.c ft_isdigit.c ft_split.c
+				printf/ft_utoa.c \
+					
+LIB_OBJS 		= $(LIB_SRCS:.c=.o)
 
-LIBFT_OBJS	= $(LIBFT_SRCS:.c=.o)
+CC				= cc
+RM				= rm -rf
+CFLAGS			= -Wall -Wextra -Werror -fPIC
 
-CC			= cc
-RM			= rm -rf
-CFLAGS		= -Wall -Wextra -Werror -fPIC
+NAME			= libft.a
 
-NAME 		= libft.a
+all:			$(NAME)
 
-all:		$(NAME)
+$(NAME):		$(LIB_OBJS)
+				ar rcs $(NAME) $(LIB_OBJS)
 
-$(NAME)		$(LIBFT_OBJS)
-			ar rcs $(NAME) $(LIBFT_OBJS)
+clean:
+				$(RM) $(LIB_OBJS)
 
-clean:		
-			$(RM) $(LIBFT_OBJS)
+fclean:         clean
+				$(RM) $(NAME)
 
-fclean:		clean
-			$(RM) $(NAME)
+re:             fclean $(NAME)
 
-re:			fclean $(NAME)
-
-.PHONY: 	all clean fclean re
+.PHONY:         all clean fclean re
