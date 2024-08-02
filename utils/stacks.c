@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 09:23:13 by gonolive          #+#    #+#             */
-/*   Updated: 2024/08/02 12:03:44 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/08/02 12:13:31 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,17 +75,4 @@ int	ft_stack_size(t_stack *stack)
 		i++;
 	}
 	return (i);
-}
-
-t_stack	*get_cheap(t_stack *b)
-{
-	while (b)
-	{
-		if (b->cheapest == TRUE)
-		{
-			return (b);
-		}
-		b = b->next;
-	}
-	return (NULL);
 }

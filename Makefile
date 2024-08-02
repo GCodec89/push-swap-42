@@ -6,7 +6,7 @@
 #    By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/29 14:13:32 by gonolive          #+#    #+#              #
-#    Updated: 2024/08/02 11:59:48 by gonolive         ###   ########.fr        #
+#    Updated: 2024/08/02 12:14:10 by gonolive         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CFLAGS			= -Wall -Wextra -Werror -g -Iheaders/
 LIBFT 			= libft/libft.a
 
 SRCS 			= main.c \
-						utils/errors.c utils/exit_quit.c utils/find.c utils/freeza.c utils/stacks.c \
+						utils/errors.c utils/exit_quit.c utils/find.c utils/freeza.c utils/get_cheap.c utils/stacks.c \
 						coms/push.c coms/rev_rotate.c coms/rotate.c coms/swap.c\
 						algorithm/push_swap.c algorithm/set_values.c \
 
