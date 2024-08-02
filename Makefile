@@ -6,7 +6,7 @@
 #    By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 18:05:28 by gonolive          #+#    #+#              #
-#    Updated: 2024/08/01 21:52:20 by gonolive         ###   ########.fr        #
+#    Updated: 2024/08/02 08:29:27 by gonolive         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ CFLAGS			= -Wall -Wextra -Werror -g -Iheaders/
 LIBFT 			= libft/libft.a
 
 SRCS 			= main.c \
+						coms/push.c coms/rev_rotate.c coms/rotate.c coms/swap.c \
 						utils/erros.c utils/exit.c utils/freeza.c utils/stacks.c \
 
 OBJS 			= $(SRCS:%.c=%.o)
