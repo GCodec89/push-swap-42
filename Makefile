@@ -6,7 +6,7 @@
 #    By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/29 14:13:32 by gonolive          #+#    #+#              #
-#    Updated: 2024/08/02 12:14:10 by gonolive         ###   ########.fr        #
+#    Updated: 2024/08/06 17:01:32 by gonolive         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,18 @@ clean:
 fclean:         clean
 				@$(MAKE) fclean -C ./libft
 				@$(RM) $(NAME)
+
+download:
+				@wget https://cdn.intra.42.fr/document/document/25705/checker_linux && chmod 777 checker_linux
+
+visualizer:
+				git clone https://github.com/o-reo/push_swap_visualizer.git && \
+				cd push_swap_visualizer && \
+				mkdir build && \
+				cd build && \
+				cmake .. && \
+				make && \
+				./bin/visualizer
 
 re:             fclean all
 
