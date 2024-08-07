@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 12:03:27 by gonolive          #+#    #+#             */
-/*   Updated: 2024/07/29 18:52:11 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/08/07 14:38:10 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static int	n_len(const char *str, char c)
 	return (len);
 }
 
-static char	count_words(char const *str, char c)
+static int	count_words(char const *str, char c)
 {
 	int	i;
 	int	word;
