@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 18:59:44 by gonolive          #+#    #+#             */
-/*   Updated: 2024/08/02 12:01:01 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/08/07 18:48:13 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	check_error(char *argv, long n, t_stack **a)
 		return (FALSE);
 	if (check_repeat(*a, n) == 0)
 		return (FALSE);
-	if ((argv[0] == '+' || argv[0] == '-') && argv[1] >= '0' && argv[1] <= '9')
+	if ((argv[0] == '+' || argv[0] == '-') && (argv[1] >= '0' && argv[1] <= '9'))
 	{
 		i++;
 		res = TRUE;

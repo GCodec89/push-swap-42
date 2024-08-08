@@ -6,13 +6,13 @@
 #    By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/29 14:13:32 by gonolive          #+#    #+#              #
-#    Updated: 2024/08/06 17:01:32 by gonolive         ###   ########.fr        #
+#    Updated: 2024/08/08 21:13:35 by gonolive         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 			= push_swap
 
-CC				= gcc
+CC				= cc
 RM				= rm -rf
 CFLAGS			= -Wall -Wextra -Werror -g -Iheaders/
 
@@ -41,9 +41,6 @@ fclean:         clean
 				@$(MAKE) fclean -C ./libft
 				@$(RM) $(NAME)
 
-download:
-				@wget https://cdn.intra.42.fr/document/document/25705/checker_linux && chmod 777 checker_linux
-
 visualizer:
 				git clone https://github.com/o-reo/push_swap_visualizer.git && \
 				cd push_swap_visualizer && \
@@ -55,4 +52,4 @@ visualizer:
 
 re:             fclean all
 
-.PHONY:         all clean fclean re
+.PHONY:         all clean fclean visualizer re
